@@ -1,3 +1,4 @@
+//what about response body?
 
 describe("Posts",()=>{
   it('should delete post by id', ()=>{
@@ -7,5 +8,6 @@ describe("Posts",()=>{
       method: 'DELETE',
     }).as("deletePost")
     cy.get("@deletePost").its("status").should("equal",200)
+    cy.get("@deletePost").its("body").should('be.empty')
   });
 })
